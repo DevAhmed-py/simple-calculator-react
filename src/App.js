@@ -27,6 +27,15 @@ function App() {
     setResult((result) => result / Number(inputRef.current.value)); 
   };
   
+  function resetInput(e) { 
+    e.preventDefault(); 
+    inputRef.current.value = 0;
+  }; 
+
+  function resetResult(e) { 
+    e.preventDefault(); 
+    setResult((prevVal) => prevVal * 0);  
+  };
 
   return ( 
     <div className="App"> 
@@ -46,6 +55,9 @@ function App() {
         <button onClick={subtract}>subtract</button>
         <button onClick={multiply}>multiply</button>
         <button onClick={divide}>divide</button>
+        <button onClick={resetInput}>reset input</button>
+        <button onClick={resetResult}>reset result</button> 
+
       </form> 
     </div> 
   );
